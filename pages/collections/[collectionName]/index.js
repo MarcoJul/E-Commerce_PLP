@@ -52,23 +52,12 @@ export async function getStaticProps(context) {
   const collectionData = await getCollections();
 
   const collectionList = collectionData.collection_listings;
-  console.log(collectionList);
 
   const filterCollection = collectionList.find((coll) => coll.handle === params.collectionName);
 
   const collectionID = filterCollection.collection_id;
-  console.log("FILTERED", collectionID);
-
-  // console.log(params.collectionName);
 
   const productsData = await getProducts(collectionID);
-
-  // console.log(productsData);
-  // const collectionName = params.collectionName;
-  // console.log(collectionName);
-  // const collections = await getCollections();
-
-  // const products = await getProducts();
 
   return {
     props: { collection: productsData },

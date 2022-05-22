@@ -7,7 +7,7 @@ import classes from "./ProductsList.module.css";
 const ProductList = (props) => {
   // const [collection, setCollection] = useState([]);
 
-  console.log(props.collection);
+  // console.log(props.collection);
 
   // console.log(router.query.collectionName);
 
@@ -32,7 +32,7 @@ const ProductList = (props) => {
   return (
     <ul className={classes.listBox}>
       {props.collection.map((item) => (
-        <ProductItem key={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
+        <ProductItem key={item.id} id={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
       ))}
     </ul>
   );

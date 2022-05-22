@@ -1,7 +1,13 @@
 import classes from "./ProductItem.module.css";
 
+import Button from "../UI/Button";
+import { useRouter } from "next/router";
+
 const ProductItem = (props) => {
-  const { image, title, vendor } = props;
+  const { id, image, title, vendor } = props;
+  const router = useRouter();
+
+  const collectionName = router.query.collectionName;
 
   return (
     <li className={classes.card}>
@@ -12,6 +18,7 @@ const ProductItem = (props) => {
         <p>80.00 €</p>
         <p>69,90 €</p>
       </div>
+      <Button link={`/collections/${collectionName}/${id}`}>Go To Products</Button>
     </li>
   );
 };
