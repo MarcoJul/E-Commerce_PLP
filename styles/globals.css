@@ -1,3 +1,8 @@
+@import url("https://api.fontshare.com/css?f[]=stardom@400&f[]=satoshi@300,400,500&display=swap");
+
+/* font-family: 'Stardom', sans-serif;
+font-family: 'Satoshi', sans-serif; */
+
 *,
 *::after,
 *::before {
@@ -8,4 +13,8 @@
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  font-family: "Satoshi", sans-serif;
 }

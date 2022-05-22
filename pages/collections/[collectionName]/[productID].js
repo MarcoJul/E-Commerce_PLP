@@ -28,7 +28,7 @@ const ProductPage = (props) => {
 
   return (
     <div>
-      <ProductInfo id={product.id} title={product.title} />
+      <ProductInfo title={product.title} />
       <h1>yes</h1>
     </div>
   );
