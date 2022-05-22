@@ -3,8 +3,6 @@ import CollectionItem from "./CollectionItem";
 const CollectionList = (props) => {
   const { items } = props;
 
-  console.log(items);
-
   return (
     <ul>
       {items.map((collection) => (
