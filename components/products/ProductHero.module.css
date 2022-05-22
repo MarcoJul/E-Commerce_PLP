@@ -1,8 +1,9 @@
 .hero {
   height: 35rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  flex-direction: column;
 }
 
 .title {
@@ -10,4 +11,21 @@
   font-size: 3.2rem;
   color: #fff;
   text-shadow: 2px 2px 0px #000000;
+}
+
+.filterBox {
+  color: #fff;
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+.filters {
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4rem;
+  background-color: #fff;
+  color: #000000;
 }

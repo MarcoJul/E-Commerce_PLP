@@ -41,7 +41,7 @@ const ProductList = (props) => {
     <Fragment>
       <div className={classes.infoBar}>
         <div className={classes.textBox}>
-          <p className={classes.numItems}>85 items</p>
+          <p className={classes.numItems}>{props.collection.length} items</p>
           <p className={classes.sort}>Sort by: newest</p>
         </div>
       </div>
