@@ -4,12 +4,9 @@ import { useRouter } from "next/router";
 import ProductsList from "../../../components/products/ProductsList";
 
 const ProductsPage = (props) => {
-  const [collections, setCollections] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [id, setId] = useState();
-  const router = useRouter();
+  // console.log("PROPS", props.collection.products);
 
-  console.log("PROPS", props);
+  const collections = props.collection.products;
 
   // if (collections.collection_listings.length !== 0) {
   //   const filterCollection = collections.filter((coll) => coll.handle === router.query.collectionName);

@@ -1,6 +1,5 @@
 .container {
-  max-width: 110rem;
+  max-width: 120rem;
   margin: 0 auto;
   min-height: 100rem;
-  background-color: cadetblue;
 }

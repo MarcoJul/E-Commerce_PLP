@@ -1,21 +1,15 @@
 import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/router";
+import ProductItem from "./ProductItem";
+
+import classes from "./ProductsList.module.css";
 
 const ProductList = (props) => {
   // const [collection, setCollection] = useState([]);
-  const [products, setProducts] = useState([]);
-  // const [collectionId, setCollectionId] = useState();
-  const router = useRouter();
+
+  console.log(props.collection);
 
   // console.log(router.query.collectionName);
-
-  const { collection } = props;
-
-  console.log(collection);
-
-  const filterCollection = collection.filter((coll) => coll.handle === router.query.collectionName);
-
-  console.log(filterCollection[0]);
 
   // const fetchProducts = () => {
 
@@ -35,7 +29,13 @@ const ProductList = (props) => {
   //   fetchProducts();
   // }, []);
 
-  return <ul></ul>;
+  return (
+    <ul className={classes.listBox}>
+      {props.collection.map((item) => (
+        <ProductItem key={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
+      ))}
+    </ul>
+  );
 };
 
 export default ProductList;
