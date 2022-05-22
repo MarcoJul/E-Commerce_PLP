@@ -28,4 +28,13 @@
   border-radius: 4rem;
   background-color: #fff;
   color: #000000;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.filters:hover,
+.active {
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 2px 2px 0px #ffffff;
 }

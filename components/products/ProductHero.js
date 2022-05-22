@@ -1,14 +1,13 @@
 import classes from "./ProductHero.module.css";
+import { useState } from "react";
 
 const ProductHero = (props) => {
-  console.log(props.collection);
+  const [activeFilter, setActiveFilter] = useState("all");
 
   let types = [];
-  const filterProduct = props.collection.map((product) => {
+  props.collection.map((product) => {
     if (!types.includes(product.product_type)) types.push(product.product_type);
   });
-
-  console.log("filter", types);
 
   const title = props.title.replaceAll("-", " ").replaceAll("and", "&").split(" ");
   const newWords = title.map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
@@ -20,19 +19,31 @@ const ProductHero = (props) => {
     backgroundPosition: "75% 85%",
   };
 
+  const activeFilterHandler = (filter) => {
+    setActiveFilter(filter);
+    props.onFiltering(filter);
+  };
+
   return (
     <div className={classes.hero} style={style}>
       <div>
         <h1 className={classes.title}>{newWords}</h1>
       </div>
       <div className={classes.filterBox}>
-        <button className={classes.filters}>
-          <p>All</p>
+        <button
+          className={`${classes.filters} ${activeFilter === "all" ? classes.active : ""}`}
+          onClick={activeFilterHandler.bind(this, "all")}
+        >
+          <p>ALL</p>
         </button>
         {types.length > 1
           ? types.map((type, i) => {
               return (
-                <button className={classes.filters} key={i}>
+                <button
+                  className={`${classes.filters} ${activeFilter === type ? classes.active : ""}`}
+                  key={i}
+                  onClick={activeFilterHandler.bind(this, type)}
+                >
                   <p>{type.toUpperCase()}</p>
                 </button>
               );

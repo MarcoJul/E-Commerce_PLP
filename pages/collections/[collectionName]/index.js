@@ -1,13 +1,23 @@
 import ProductsList from "../../../components/products/ProductsList";
 import ProductHero from "../../../components/products/ProductHero";
+import { useState } from "react";
 
 const ProductsPage = (props) => {
+  const [filter, setFilter] = useState("all");
   const collections = props.collection.products;
+  const filterHandler = (filter) => {
+    setFilter(filter);
+  };
 
   return (
     <div>
-      <ProductHero title={props.pageCollection} image={props.imgCollection} collection={collections} />
-      <ProductsList collection={collections} />
+      <ProductHero
+        title={props.pageCollection}
+        image={props.imgCollection}
+        collection={collections}
+        onFiltering={filterHandler}
+      />
+      <ProductsList collection={collections} filter={filter} />
     </div>
   );
 };
