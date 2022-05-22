@@ -1,0 +1,13 @@
+.hero {
+  height: 35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Stardom", sans-serif;
+  font-size: 3.2rem;
+  color: #fff;
+  text-shadow: 2px 2px 0px #000000;
+}

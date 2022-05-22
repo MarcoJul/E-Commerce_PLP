@@ -1,6 +1,28 @@
+.infoBar {
+  border-bottom: 1px solid #000;
+  height: 4.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120rem;
+}
+
+.numItems,
+.sort {
+  font-size: 1.4rem;
+}
+
 .listBox {
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
   gap: 1.6rem;
+  max-width: 120rem;
+  margin: 1.5rem auto 0;
 }

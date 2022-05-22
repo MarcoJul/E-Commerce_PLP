@@ -1,33 +1,12 @@
-import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/router";
-
 import ProductsList from "../../../components/products/ProductsList";
+import ProductHero from "../../../components/products/ProductHero";
 
 const ProductsPage = (props) => {
-  // console.log("PROPS", props.collection.products);
-
   const collections = props.collection.products;
-
-  // if (collections.collection_listings.length !== 0) {
-  //   const filterCollection = collections.filter((coll) => coll.handle === router.query.collectionName);
-  //   console.log(filterCollection);
-  // }
-
-  // const fetchProducts = async () => {
-  //   const response = await fetch(
-  //     `https://4ilk3v7wbk.execute-api.eu-west-1.amazonaws.com/dev/collections/${id}/products.json`
-  //   );
-  //   const data = await response.json();
-  //   console.log(data);
-  //   setProducts(data);
-  // };
-
-  // useEffect(() => {
-  //   fetchCollections();
-  // }, []);
 
   return (
     <div>
+      <ProductHero title={props.pageCollection} image={props.imgCollection} collection={collections} />
       <ProductsList collection={collections} />
     </div>
   );
@@ -60,7 +39,11 @@ export async function getStaticProps(context) {
   const productsData = await getProducts(collectionID);
 
   return {
-    props: { collection: productsData },
+    props: {
+      pageCollection: filterCollection.handle,
+      imgCollection: filterCollection.default_product_image.src,
+      collection: productsData,
+    },
   };
 }
 

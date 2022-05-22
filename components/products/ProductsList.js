@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, Fragment } from "react";
 import { useRouter } from "next/router";
 import ProductItem from "./ProductItem";
 
@@ -8,6 +8,14 @@ const ProductList = (props) => {
   // const [collection, setCollection] = useState([]);
 
   // console.log(props.collection);
+  console.log("props", props.collection);
+
+  let types = [];
+  const filterProduct = props.collection.map((product) => {
+    if (!types.includes(product.product_type)) types.push(product.product_type);
+  });
+
+  console.log("filter", types);
 
   // console.log(router.query.collectionName);
 
@@ -30,11 +38,19 @@ const ProductList = (props) => {
   // }, []);
 
   return (
-    <ul className={classes.listBox}>
-      {props.collection.map((item) => (
-        <ProductItem key={item.id} id={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
-      ))}
-    </ul>
+    <Fragment>
+      <div className={classes.infoBar}>
+        <div className={classes.textBox}>
+          <p className={classes.numItems}>85 items</p>
+          <p className={classes.sort}>Sort by: newest</p>
+        </div>
+      </div>
+      <ul className={classes.listBox}>
+        {props.collection.map((item) => (
+          <ProductItem key={item.id} id={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
+        ))}
+      </ul>
+    </Fragment>
   );
 };
 
