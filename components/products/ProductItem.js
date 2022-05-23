@@ -11,14 +11,18 @@ const ProductItem = (props) => {
 
   return (
     <li className={classes.card}>
-      <img src={image} alt={title} />
-      <p>{vendor}</p>
-      <h3>{title}</h3>
-      <div>
-        <p>80.00 €</p>
-        <p>69,90 €</p>
+      <div className={classes.imgBox}>
+        <img src={image} alt={title} />
       </div>
-      <Button link={`/collections/${collectionName}/${id}`}>Go To Products</Button>
+      <div className={classes.infoBox}>
+        <p className={classes.vendor}>{vendor}</p>
+        <h3>{title}</h3>
+        <div className={classes.prices}>
+          <p className={classes.originalPrice}>80.00 €</p>
+          <p className={classes.finalPrice}>69,90 €</p>
+        </div>
+      </div>
+      {/* <Button link={`/collections/${collectionName}/${id}`}>Go To Products</Button> */}
     </li>
   );
 };

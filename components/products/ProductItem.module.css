@@ -1,8 +1,52 @@
 .card {
   max-width: 28.8rem;
+  list-style-type: none;
 }
 
-.card img {
+.imgBox {
   width: 28.8rem;
   height: 23.1rem;
+  overflow: hidden;
+}
+
+.imgBox img {
+  height: 100%;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vendor {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+}
+
+.infoBox h3 {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  margin-top: 0.2rem;
+}
+
+.prices {
+  display: flex;
+  gap: 0.8rem;
+}
+.prices p {
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.originalPrice {
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
+.finalPrice {
+  font-weight: 500;
 }

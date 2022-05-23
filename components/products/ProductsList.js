@@ -27,25 +27,7 @@ const ProductList = (props) => {
   //   if (!types.includes(product.product_type)) types.push(product.product_type);
   // });
 
-  // console.log(router.query.collectionName);
-
-  // const fetchProducts = () => {
-
-  //   // const collectionId = filterCollection[0].collection_id;
-
-  //   // if (!collectionId) return;
-
-  //   fetch(`https://4ilk3v7wbk.execute-api.eu-west-1.amazonaws.com/dev/collections/${collectionId}/products.json`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setProducts(data);
-  //       console.log(data);
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, []);
+  console.log(collectionList.length);
 
   return (
     <Fragment>
@@ -60,6 +42,11 @@ const ProductList = (props) => {
           <ProductItem key={item.id} id={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
         ))}
       </ul>
+      <div className={classes.pagination}>
+        <div className={classes.dot}>
+          <p className={classes.pageNumber}>1</p>
+        </div>
+      </div>
     </Fragment>
   );
 };
