@@ -1,10 +1,12 @@
 import CollectionItem from "./CollectionItem";
 
+import classes from "./CollectionList.module.css";
+
 const CollectionList = (props) => {
   const { items } = props;
 
   return (
-    <ul>
+    <ul className={classes.collectionContainer}>
       {items.map((collection) => (
         <CollectionItem
           key={collection.collection_id}

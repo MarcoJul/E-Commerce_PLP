@@ -20,6 +20,7 @@
   gap: 0.4rem;
   font-size: 2.4rem;
   font-family: "Stardom", sans-serif;
+  cursor: pointer;
 }
 
 .symbol {
@@ -27,6 +28,12 @@
   font-weight: 400;
   line-height: 0.7rem;
   margin-bottom: -2.3rem;
+  transition: all 0.5s;
+}
+
+.logo:hover .symbol {
+  transform: translateX(-1rem);
+  transition: all 0.5s;
 }
 
 .logo a {
