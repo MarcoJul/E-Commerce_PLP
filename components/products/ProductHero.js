@@ -24,18 +24,24 @@ const ProductHero = (props) => {
     props.onFiltering(filter);
   };
 
+  console.log(types[0]);
+
   return (
     <div className={classes.hero} style={style}>
       <div>
         <h1 className={classes.title}>{newWords}</h1>
       </div>
       <div className={classes.filterBox}>
-        <button
-          className={`${classes.filters} ${activeFilter === "all" ? classes.active : ""}`}
-          onClick={activeFilterHandler.bind(this, "all")}
-        >
-          <p>ALL</p>
-        </button>
+        {types.length > 1 ? (
+          <button
+            className={`${classes.filters} ${activeFilter === "all" ? classes.active : ""}`}
+            onClick={activeFilterHandler.bind(this, "all")}
+          >
+            <p>ALL</p>
+          </button>
+        ) : (
+          <div style={{ height: "3.2rem" }}></div>
+        )}
         {types.length > 1
           ? types.map((type, i) => {
               return (
