@@ -28,8 +28,7 @@ const ProductPage = (props) => {
 
   return (
     <div>
-      <ProductInfo title={product.title} />
-      <h1>yes</h1>
+      <ProductInfo title={product.title} price={product.variants[0].price} />
     </div>
   );
 };
