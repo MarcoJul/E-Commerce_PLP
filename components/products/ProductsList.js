@@ -5,6 +5,7 @@ import ProductItem from "./ProductItem";
 import classes from "./ProductsList.module.css";
 
 const ProductList = (props) => {
+  const [page, setPage] = useState(1);
   const { collection, filter } = props;
 
   let collectionList = [];
@@ -27,7 +28,31 @@ const ProductList = (props) => {
   //   if (!types.includes(product.product_type)) types.push(product.product_type);
   // });
 
+  const pageHandler = (page) => {
+    setPage(page);
+  };
+
   console.log(collectionList.length);
+  let paginationList = [];
+
+  for (let i = 0; i < collectionList.length / 10; i++) {
+    paginationList.push(
+      <div
+        className={`${classes.dot} ${page === i + 1 ? classes.activeDot : ""}`}
+        key={i}
+        onClick={pageHandler.bind(this, i + 1)}
+      >
+        <p className={classes.pageNumber}>{i + 1}</p>
+      </div>
+    );
+  }
+  let pageCollection = [];
+  if (collectionList.length > 9) {
+    pageCollection = collectionList.slice((page - 1) * 12, page * 12);
+    console.log(pageCollection);
+  } else {
+    pageCollection = collectionList;
+  }
 
   return (
     <Fragment>
@@ -38,15 +63,11 @@ const ProductList = (props) => {
         </div>
       </div>
       <ul className={classes.listBox}>
-        {collectionList.map((item) => (
+        {pageCollection.map((item) => (
           <ProductItem key={item.id} id={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
         ))}
       </ul>
-      <div className={classes.pagination}>
-        <div className={classes.dot}>
-          <p className={classes.pageNumber}>1</p>
-        </div>
-      </div>
+      <div className={classes.pagination}>{paginationList.map((item) => item)}</div>
     </Fragment>
   );
 };

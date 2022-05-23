@@ -1,6 +1,7 @@
 .card {
   max-width: 28.8rem;
   list-style-type: none;
+  cursor: pointer;
 }
 
 .imgBox {
