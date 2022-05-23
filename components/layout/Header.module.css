@@ -50,7 +50,8 @@
   position: relative;
 }
 
-.link:after {
+.link:after,
+.menuLink:after {
   content: "";
   position: absolute;
   bottom: -0.2rem;
@@ -63,7 +64,8 @@
   transition: transform 0.4s;
 }
 
-.link:hover:after {
+.link:hover:after,
+.menuLink:hover::after {
   transform: scaleX(1);
 }
 
@@ -77,6 +79,8 @@
   font-size: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
 }
 
 .active:after {
