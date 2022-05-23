@@ -64,7 +64,15 @@ const ProductList = (props) => {
       </div>
       <ul className={classes.listBox}>
         {pageCollection.map((item) => (
-          <ProductItem key={item.id} id={item.id} image={item.image.src} title={item.title} vendor={item.vendor} />
+          <ProductItem
+            key={item.id}
+            id={item.id}
+            image={item.image.src}
+            title={item.title}
+            vendor={item.vendor}
+            height={item.image.height}
+            width={item.image.width}
+          />
         ))}
       </ul>
       <div className={classes.pagination}>{paginationList.map((item) => item)}</div>

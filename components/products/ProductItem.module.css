@@ -10,9 +10,9 @@
   overflow: hidden;
 }
 
-.imgBox img {
+/* .imgBox img {
   height: 100%;
-}
+} */
 
 .infoBox {
   display: flex;

@@ -5,16 +5,22 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const ProductItem = (props) => {
-  const { id, image, title, vendor } = props;
+  const { id, image, title, vendor, height, width } = props;
   const router = useRouter();
 
   const collectionName = router.query.collectionName;
+
+  console.log(height, width);
 
   return (
     <Link href={`/collections/${collectionName}/${id}`}>
       <li className={classes.card}>
         <div className={classes.imgBox}>
-          <img src={image} alt={title} />
+          <img
+            src={image}
+            alt={title}
+            style={+height < width ? { height: "100%" } : { height: "200%", transform: "translateY(-40%)" }}
+          />
         </div>
         <div className={classes.infoBox}>
           <p className={classes.vendor}>{vendor}</p>
