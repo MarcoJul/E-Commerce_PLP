@@ -28,7 +28,7 @@ const ProductPage = (props) => {
 
   return (
     <div>
-      <ProductInfo title={product.title} price={product.variants[0].price} />
+      <ProductInfo product={props} />
     </div>
   );
 };
@@ -108,7 +108,7 @@ export async function getStaticPaths() {
 
   return {
     paths: compareArray.flat(),
-    fallback: "blocking", /// 'blocking' will block the loading state ultil the page is ready
+    fallback: false, /// 'blocking' will block the loading state ultil the page is ready
   };
 }
 export default ProductPage;

@@ -1,17 +1,16 @@
-import Button from "../components/UI/Button";
-
-const HomePage = () => {
+const HomePage = (props) => {
   return (
     <div>
       <h1>Homepage</h1>
-      <Button link="/collections">See the Collections</Button>
     </div>
   );
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps() {
   return {
+    props: { props: null },
     redirect: {
+      permanent: true,
       destination: "/collections",
     },
   };
