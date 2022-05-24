@@ -10,8 +10,6 @@ const ProductItem = (props) => {
 
   const collectionName = router.query.collectionName;
 
-  console.log(height, width);
-
   return (
     <Link href={`/collections/${collectionName}/${id}`}>
       <li className={classes.card}>
