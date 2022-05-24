@@ -2,3 +2,9 @@
   display: flex;
   width: 100vw;
 }
+
+@media screen and (max-width: 800px) {
+  .collectionContainer {
+    flex-direction: column;
+  }
+}

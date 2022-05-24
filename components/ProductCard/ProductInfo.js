@@ -1,7 +1,7 @@
 const ProductInfo = (props) => {
   const { title, price } = props;
 
-  console.log(price);
+  // console.log(price);
 
   return (
     <div>

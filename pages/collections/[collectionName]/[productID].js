@@ -7,7 +7,7 @@ const ProductPage = (props) => {
   // const [product, setProduct] = useState();
   // const router = useRouter();
 
-  console.log("PRODUCT", props);
+  // console.log("PRODUCT", props);
 
   const product = props.product.product;
 
@@ -105,8 +105,6 @@ export async function getStaticPaths() {
       params: { collectionName: collectionInfo[i].name, productID: item.id.toString() },
     }));
   });
-
-  console.log(compareArray.flat());
 
   return {
     paths: compareArray.flat(),

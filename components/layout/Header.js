@@ -36,6 +36,7 @@ const Header = () => {
           <ul>
             <li className={classes.menuLink}>Login</li>
             <li className={classes.menuLink}>Cart</li>
+            <li className={classes.menuLinkMobile}>Menu</li>
           </ul>
         </div>
       </div>
