@@ -7,10 +7,6 @@ const ProductPage = (props) => {
   // const [product, setProduct] = useState();
   // const router = useRouter();
 
-  // console.log("PRODUCT", props);
-
-  const product = props.product.product;
-
   // console.log(router.query.productID);
 
   // const getProduct = useCallback(async (id) => {
@@ -28,7 +24,7 @@ const ProductPage = (props) => {
 
   return (
     <div>
-      <ProductInfo product={props} />
+      <ProductInfo product={props.product} />
     </div>
   );
 };
@@ -73,7 +69,7 @@ export async function getStaticProps(context) {
   // const products = await getProducts();
 
   return {
-    props: { product: data },
+    props: { product: data.product },
   };
 }
 
@@ -89,7 +85,6 @@ export async function getStaticPaths() {
   const collections = await getCollections();
 
   const collectionInfo = collections.collection_listings.map((coll) => ({ name: coll.handle, id: coll.collection_id }));
-  console.log(collectionInfo);
 
   // // const collectionID = collections.collection_listings.map((collection) => collection.collection_id);
 
@@ -108,7 +103,7 @@ export async function getStaticPaths() {
 
   return {
     paths: compareArray.flat(),
-    fallback: false, /// 'blocking' will block the loading state ultil the page is ready
+    fallback: "blocking", /// 'blocking' will block the loading state ultil the page is ready
   };
 }
 export default ProductPage;

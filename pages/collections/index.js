@@ -4,8 +4,6 @@ import CollectionList from "../../components/collections/CollectionList";
 const CollectionsPage = (props) => {
   const { data } = props;
 
-  console.log(data.collection_listings);
-
   const collections = data.collection_listings;
 
   // const fetchCollections = async () => {

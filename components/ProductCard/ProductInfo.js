@@ -1,17 +1,38 @@
+import classes from "./ProductInfo.module.css";
+
+import Button from "./../UI/Button";
+
 const ProductInfo = (props) => {
-  // const { title, price } = props;
+  const { product } = props;
 
-  if (!props) console.log("no");
+  console.log(product);
 
-  // console.log(price);
+  if (!props) return <div> Object Not Found!</div>;
+
+  console.log(product.tags);
+
+  const tags = product.tags.split(", ");
+  console.log(tags);
 
   return (
-    <div>
-      <h1>Hi</h1>
-      <h3>{props.product.product.product?.title}</h3>
-      <div>
-        <p>80.00 €</p>
-        {/* <p>{price} €</p> */}
+    <div className={classes.productContainer}>
+      <div className={classes.productImg}>
+        <img src={product.image.src} alt={product.title} />
+      </div>
+      <div className={classes.infoBox}>
+        <p className={classes.breadcrumb}>{product.product_type}</p>
+        <h3 className={classes.productTitle}>{product?.title}</h3>
+        <p className={classes.vendor}>{product.vendor}</p>
+        <div className={classes.priceSection}>
+          <p>{(Number(product?.variants[0].price.slice(0, 2)) * 1.2).toFixed(2)} €</p>
+          <p>{product?.variants[0].price} €</p>
+        </div>
+        <Button>ADD TO CART</Button>
+        <div className={classes.tags}>
+          {tags.map((tag) => (
+            <div key={Math.random()}>{tag}</div>
+          ))}
+        </div>
       </div>
     </div>
   );

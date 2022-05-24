@@ -24,8 +24,6 @@ const ProductHero = (props) => {
     props.onFiltering(filter);
   };
 
-  console.log(types[0]);
-
   return (
     <div className={classes.hero} style={style}>
       <div>

@@ -1,0 +1,28 @@
+.productContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productTitle {
+  font-size: 3.2rem;
+  font-family: "Stardom", sans-serif;
+  font-weight: 400;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.priceSection {
+  display: flex;
+}
+
+.tags {
+  display: flex;
+  gap: 0.9rem;
+  font-size: 1.4rem;
+}
