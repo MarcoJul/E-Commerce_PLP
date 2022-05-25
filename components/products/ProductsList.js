@@ -6,7 +6,7 @@ import classes from "./ProductsList.module.css";
 
 const ProductList = (props) => {
   const [page, setPage] = useState(1);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [listOrder, setListOrder] = useState("NEWEST");
   const { collection, filter } = props;
 
