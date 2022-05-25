@@ -38,3 +38,18 @@
   color: #fff;
   box-shadow: 2px 2px 0px #ffffff;
 }
+
+@media screen and (max-width: 800px) {
+  .hero {
+    height: 19.5rem;
+  }
+  .filterBox {
+    margin-top: 4.5rem;
+  }
+
+  .filters {
+    /* font-size: 1.2rem; */
+
+    padding: 0.6rem 1rem;
+  }
+}
