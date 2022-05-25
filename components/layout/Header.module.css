@@ -93,6 +93,8 @@
 
 .menuLinkMobile {
   display: none;
+  width: 4.5rem;
+  text-align: right;
 }
 
 .active:after {
@@ -107,10 +109,63 @@
     width: 100%;
     padding: 0 1.6rem;
   }
-  .navigation {
-    display: none;
+
+  .logo:hover .symbol {
+    transform: translateX(0);
   }
+  .navigation {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    background-color: #fff;
+    z-index: 20;
+    margin-top: 4.7rem;
+    height: calc(100% - 4.7rem);
+    width: 100vw;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+    padding-left: 1.6rem;
+    overflow: hidden;
+  }
+
   .menuLinkMobile {
     display: block;
+  }
+
+  .link {
+    height: 7.3rem;
+    padding: 1.6rem 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link a {
+    font-family: "Stardom", sans-serif;
+    font-size: 3.2rem;
+    text-transform: unset;
+  }
+
+  .link:hover:after,
+  .menuLink:hover::after {
+    transform: scaleX(0);
+  }
+
+  .translate {
+    transition: all 0.5s;
+    transform: translateX(0);
+  }
+  .active {
+    border-radius: 100px;
+    border: 1px solid #000000;
+    box-shadow: 2px 2px 0px #000000;
+  }
+  .active:after {
+    transform: scaleX(0);
   }
 }

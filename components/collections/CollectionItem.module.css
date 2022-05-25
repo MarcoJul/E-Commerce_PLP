@@ -1,7 +1,6 @@
 .collectionBox {
   width: 33.3%;
   height: 80rem;
-  background-color: red;
   overflow: hidden;
   position: relative;
   cursor: pointer;

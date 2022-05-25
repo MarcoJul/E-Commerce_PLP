@@ -1,4 +1,3 @@
-import { clearPreviewData } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
 import { useEffect, useState, useCallback } from "react";
 import ProductInfo from "../../../components/ProductCard/ProductInfo";
@@ -69,7 +68,7 @@ export async function getStaticProps(context) {
   // const products = await getProducts();
 
   return {
-    props: { product: data.product },
+    props: { product: data },
   };
 }
 
