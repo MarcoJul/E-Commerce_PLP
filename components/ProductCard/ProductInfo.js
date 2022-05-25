@@ -6,7 +6,6 @@ import Button from "./../UI/Button";
 
 const ProductInfo = (props) => {
   const router = useRouter();
-  console.log(props);
 
   const collectionName = router.query.collectionName;
   if (!props) return <div> Object Not Found!</div>;

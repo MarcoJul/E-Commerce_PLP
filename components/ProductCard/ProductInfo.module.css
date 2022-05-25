@@ -82,7 +82,27 @@
   .productImg img {
     transform: translate(-50%, -60%) scale(0.8);
   }
+
+  .infoBox {
+    width: 100%;
+    gap: 0;
+  }
+  .breadcrumb {
+    font-size: 1rem;
+    margin-top: 2.4rem;
+  }
   .productTitle {
     font-size: 2.4rem;
+  }
+  .description {
+    line-height: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .vendor {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .tags {
+    margin-top: 2.4rem;
   }
 }
