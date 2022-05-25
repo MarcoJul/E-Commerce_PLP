@@ -1,6 +1,5 @@
 import classes from "./ProductItem.module.css";
 
-import Button from "../UI/Button";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -28,7 +27,6 @@ const ProductItem = (props) => {
             <p className={classes.finalPrice}>69,90 €</p>
           </div>
         </div>
-        {/* <Button link={`/collections/${collectionName}/${id}`}>Go To Products</Button> */}
       </li>
     </Link>
   );

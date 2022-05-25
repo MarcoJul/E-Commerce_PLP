@@ -6,7 +6,7 @@ import classes from "./ProductsList.module.css";
 
 const ProductList = (props) => {
   const [page, setPage] = useState(1);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
   const [listOrder, setListOrder] = useState("NEWEST");
   const { collection, filter } = props;
 
@@ -19,7 +19,6 @@ const ProductList = (props) => {
       collection.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
       setListOrder("NEWEST");
     }
-    console.log(listOrder);
     if (sorting === "older") {
       collection.sort((a, b) => new Date(a.published_at) - new Date(b.published_at));
       setListOrder("LESS RECENT");
