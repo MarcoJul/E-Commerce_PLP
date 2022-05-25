@@ -12,11 +12,12 @@ const ProductInfo = (props) => {
   const { product } = props.product;
 
   let tags = [];
+  let description = "";
   if (product) {
     tags = product?.tags.split(", ");
-  }
 
-  const description = product.body_html.slice(3, -4);
+    description = product.body_html.slice(3, -4);
+  }
 
   return (
     <div className={classes.productContainer}>
@@ -25,7 +26,7 @@ const ProductInfo = (props) => {
       </div>
       <div className={classes.infoBox}>
         <p className={classes.breadcrumb}>
-          {collectionName} {product.product_type && `/ ${product?.product_type}`}
+          {collectionName} {product?.product_type && `/ ${product?.product_type}`}
         </p>
         <h3 className={classes.productTitle}>{product?.title}</h3>
         <p className={classes.description}>{description}</p>
