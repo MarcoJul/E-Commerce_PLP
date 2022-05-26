@@ -103,6 +103,12 @@ This problem is under investigation: it could be that it's not suitable to fetch
 
 As soon as I get the solution, I will be here to fix this problem.
 
+_Edit: despite the 'soft' failure in the next build, while uploading and deploying on Vercel everything is ok._
+
+5. **Use the breadcrumb to link to product page with the selected filter activated**
+
+In the PDP, my goal is to activate the link in the breadcrumb to go back to the product list page, with the selected filter already active.
+
 <br>
 <br>
 
