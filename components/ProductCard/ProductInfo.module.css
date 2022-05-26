@@ -1,6 +1,8 @@
 .productContainer {
   display: flex;
   justify-content: space-between;
+  max-width: 120rem;
+  margin: 1.6rem auto;
 }
 .productImg {
   width: 50%;
@@ -9,10 +11,10 @@
   height: 60rem;
 }
 .productImg img {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1); */
 }
 
 .infoBox {
