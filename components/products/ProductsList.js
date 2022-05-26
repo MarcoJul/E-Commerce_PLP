@@ -72,9 +72,15 @@ const ProductList = (props) => {
           {showModal && (
             <div className={classes.modal}>
               <p>SORT BY</p>
-              <p onClick={sortHandler.bind(this, "recent")}>Newest</p>
-              <p onClick={sortHandler.bind(this, "older")}>Less Recent</p>
-              <button onClick={showModalHandler}>CLOSE</button>
+              <p className={classes.sortControl} onClick={sortHandler.bind(this, "recent")}>
+                Newest
+              </p>
+              <p className={classes.sortControl} onClick={sortHandler.bind(this, "older")}>
+                Less Recent
+              </p>
+              <button className={classes.sortControl} onClick={showModalHandler}>
+                CLOSE
+              </button>
             </div>
           )}
         </div>
