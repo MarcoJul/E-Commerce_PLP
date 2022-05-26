@@ -3,7 +3,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/MarcoJul/E-Commerce_PLP?color=yellow)
 ![GitHub language count](https://img.shields.io/github/languages/count/MarcoJul/E-Commerce_PLP)
 
-This is an SPA designed to show an product list, testing the basic functionality of an e-commerce website.
+This is a SPA designed to show a product list, testing the basic functionality of an e-commerce website.
 
 To run the app, clone the repository, install the dependencies and run:
 
