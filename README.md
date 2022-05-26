@@ -5,6 +5,14 @@
 
 This is an SPA designed to show an product list, testing the basic functionality of an e-commerce website.
 
+To run the app, clone the repository, install the dependencies and run:
+
+`npm run dev` to start developing
+
+`npm run build` to make a build folders for the deployed
+
+`npm run start` to run the builded app
+
 ## How it's made
 
 Before start writing any line of code, the most difficult decision is the "HOW?". Requirements are to build an e-commerce website, so just React wouldn't be so suitable (Routing is fine, but no SEO support ahead).
@@ -48,8 +56,6 @@ Ok, first decision has been made. Now let's populate the rest of the tool box:
   <br>
 
 ## What you can do in this SPA
-
-<hr>
 
 <br>
 

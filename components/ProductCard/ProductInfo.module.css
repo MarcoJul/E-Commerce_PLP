@@ -22,7 +22,7 @@
   align-items: center;
   width: 50%;
   gap: 1.6rem;
-  margin-top: 5rem;
+  margin-top: 2.4rem;
 }
 
 .breadcrumb {
@@ -72,7 +72,7 @@
   gap: 0.9rem;
   font-size: 1.4rem;
   text-transform: uppercase;
-  margin-top: 11rem;
+  margin-top: 3rem;
 }
 
 .tag {
@@ -98,11 +98,9 @@
   .infoBox {
     width: 100%;
     gap: 0;
-    margin-top: 0;
   }
   .breadcrumb {
     font-size: 1rem;
-    margin-top: 2.4rem;
   }
   .productTitle {
     font-size: 2.4rem;

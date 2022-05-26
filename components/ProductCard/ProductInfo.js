@@ -8,6 +8,8 @@ import Button from "./../UI/Button";
 const ProductInfo = (props) => {
   const router = useRouter();
 
+  const collectionUrl = router.query.collectionName;
+
   const collectionName = router.query.collectionName.replaceAll("-", " ").replaceAll("and", "&");
 
   if (!props) return <div> Object Not Found!</div>;
@@ -28,7 +30,7 @@ const ProductInfo = (props) => {
       </div>
       <div className={classes.infoBox}>
         <p className={classes.breadcrumb}>
-          <Link href={`/collections/${collectionName}`}>{collectionName}</Link>
+          <Link href={`/collections/${collectionUrl}`}>{collectionName}</Link>
           {product?.product_type && ` / ${product?.product_type}`}
         </p>
         <h3 className={classes.productTitle}>{product?.title}</h3>
