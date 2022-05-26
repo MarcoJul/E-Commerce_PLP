@@ -27,15 +27,7 @@ const ProductInfo = (props) => {
   return (
     <div className={classes.productContainer}>
       <div className={classes.productImg}>
-        <img
-          src={product?.image.src}
-          alt={product?.title}
-          style={
-            +height < width
-              ? { height: "100%", transform: "translateX(-15%)" }
-              : { height: "200%", transform: "translateY(-40%)" }
-          }
-        />
+        <img src={product?.image.src} alt={product?.title} />
       </div>
       <div className={classes.infoBox}>
         <p className={classes.breadcrumb}>
