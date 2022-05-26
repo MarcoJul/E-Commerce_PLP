@@ -22,7 +22,7 @@ const CollectionItem = (props) => {
   return (
     <Link href={`/collections/${newTitle}`}>
       <div className={classes.collectionBox} style={style}>
-        <h2 className={classes.collectionTitle}>{title}</h2>
+        <h2 className={classes.collectionTitle}>{formattedTitle}</h2>
       </div>
     </Link>
   );
