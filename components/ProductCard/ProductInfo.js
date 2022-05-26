@@ -8,7 +8,8 @@ import Button from "./../UI/Button";
 const ProductInfo = (props) => {
   const router = useRouter();
 
-  const collectionName = router.query.collectionName;
+  const collectionName = router.query.collectionName.replaceAll("-", " ").replaceAll("and", "&");
+
   if (!props) return <div> Object Not Found!</div>;
   const { product } = props.product;
 
@@ -19,10 +20,6 @@ const ProductInfo = (props) => {
 
     description = product.body_html.slice(3, -4);
   }
-
-  const height = product?.image.height;
-  const width = product?.image.width;
-  console.log(height, width);
 
   return (
     <div className={classes.productContainer}>

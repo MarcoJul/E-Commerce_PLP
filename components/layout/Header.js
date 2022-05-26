@@ -26,7 +26,7 @@ const Header = () => {
           <Link href="/">
             <div className={classes.logo}>
               <p className={classes.symbol}>*</p>
-              <p>Logo</p>
+              <p className={classes.logoText}>Logo</p>
             </div>
           </Link>
         </div>

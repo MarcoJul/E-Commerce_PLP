@@ -28,11 +28,14 @@
   font-weight: 400;
   line-height: 0.7rem;
   margin-bottom: -2.3rem;
+}
+
+.logoText {
   transition: all 0.5s;
 }
 
-.logo:hover .symbol {
-  transform: translateX(-1rem);
+.logo:hover .logoText {
+  transform: translateX(0.5rem);
   transition: all 0.5s;
 }
 
@@ -116,7 +119,7 @@
     padding: 0 1.6rem;
   }
 
-  .logo:hover .symbol {
+  .logo:hover .logoText {
     transform: translateX(0);
   }
   .navigation {
