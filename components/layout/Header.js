@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
+import Link from "next/link";
 import classes from "./Header.module.css";
 
 const Header = () => {
@@ -10,14 +10,19 @@ const Header = () => {
 
   const collectionPage = router.query.collectionName;
 
-  const menuHandler = () => {
+  const menuHandler = (action) => {
+    if (action === "logo") {
+      setShowMenu(false);
+      return;
+    }
+
     setShowMenu((previousState) => !previousState);
   };
 
   return (
     <header className={classes.header}>
       <div className={classes.container}>
-        <div onClick={menuHandler}>
+        <div onClick={menuHandler.bind(this, "logo")}>
           <Link href="/">
             <div className={classes.logo}>
               <p className={classes.symbol}>*</p>

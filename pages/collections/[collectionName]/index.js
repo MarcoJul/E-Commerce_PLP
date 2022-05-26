@@ -28,9 +28,9 @@ async function getCollections() {
   return data;
 }
 
-async function getProducts(name) {
+async function getProducts(collectionName) {
   const response = await fetch(
-    `https://4ilk3v7wbk.execute-api.eu-west-1.amazonaws.com/dev/collections/${name}/products.json`
+    `https://4ilk3v7wbk.execute-api.eu-west-1.amazonaws.com/dev/collections/${collectionName}/products.json`
   );
   const data = await response.json();
   return data;
@@ -39,13 +39,9 @@ async function getProducts(name) {
 export async function getStaticProps(context) {
   const { params } = context;
   const collectionData = await getCollections();
-
   const collectionList = collectionData.collection_listings;
-
-  const filterCollection = collectionList.find((coll) => coll.handle === params.collectionName);
-
+  const filterCollection = collectionList.find((collection) => collection.handle === params.collectionName);
   const collectionID = filterCollection.collection_id;
-
   const productsData = await getProducts(collectionID);
 
   return {
@@ -59,14 +55,12 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const collectionData = await getCollections();
-
   const collectionNames = collectionData.collection_listings.map((collection) => collection.handle);
-
   const pathsWithParams = collectionNames.map((name) => ({ params: { collectionName: name } }));
 
   return {
     paths: pathsWithParams,
-    fallback: false, /// 'blocking' will block the loading state ultil the page is ready
+    fallback: false,
   };
 }
 export default ProductsPage;

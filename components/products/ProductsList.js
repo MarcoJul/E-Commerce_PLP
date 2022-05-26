@@ -1,5 +1,5 @@
-import { useEffect, useState, useCallback, Fragment } from "react";
-import { useRouter } from "next/router";
+import { useState, Fragment } from "react";
+
 import ProductItem from "./ProductItem";
 
 import classes from "./ProductsList.module.css";
@@ -36,18 +36,9 @@ const ProductList = (props) => {
     collectionList = collection;
   } else collectionList = filteredCollection;
 
-  // const [collection, setCollection] = useState([]);
-
-  // console.log(props.collection);
-  // console.log("props", props.collection);
-
-  // let types = [];
-  // const filterProduct = props.collection.map((product) => {
-  //   if (!types.includes(product.product_type)) types.push(product.product_type);
-  // });
-
   const pageHandler = (page) => {
     setPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   let paginationList = [];
