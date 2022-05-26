@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 import classes from "./ProductInfo.module.css";
 
@@ -26,7 +27,8 @@ const ProductInfo = (props) => {
       </div>
       <div className={classes.infoBox}>
         <p className={classes.breadcrumb}>
-          {collectionName} {product?.product_type && `/ ${product?.product_type}`}
+          <Link href={`/collections/${collectionName}`}>{collectionName}</Link>
+          {product?.product_type && ` / ${product?.product_type}`}
         </p>
         <h3 className={classes.productTitle}>{product?.title}</h3>
         <p className={classes.description}>{description}</p>
